@@ -3,19 +3,13 @@ package com.bridgelabz.EmployeePay;
 public class TicTacToeGame {
 	public void createBoard() {
 		char[] board = new char[10];
-		board[1] = ' ';
-		board[2] = ' ';
-		board[2] = ' ';
-		board[3] = ' ';
-		board[4] = ' ';
-		board[5] = ' ';
-		board[6] = ' ';
-		board[7] = ' ';
-		board[8] = ' ';
-		board[9] = ' ';
+		for (char i = 1; i < 10; i++)
+			board[i] = ' ';
+
 	}
 
 	public static void main(String[] args) {
-
+		TicTacToeGame boardObj = new TicTacToeGame();
+		boardObj.createBoard();
 	}
 }
