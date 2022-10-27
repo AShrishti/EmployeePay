@@ -6,7 +6,7 @@ import java.util.Random;
  * Calculating the Monthly Employee Wage
  *
  */
-public class App {
+public class EmpWageComputation {
 
 	public static void main(String[] args) {
 		int WorkingHours = 0;

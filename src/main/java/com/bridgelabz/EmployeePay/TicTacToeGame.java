@@ -18,13 +18,14 @@ public class TicTacToeGame {
 
 	}
 
+	// method for choosing players
 	public void choosePlayer() {
 		char computer;
 
 		Scanner sc = new Scanner(System.in);
 		System.out.println("Enter Character X or O");
 
-		char player = sc.nextLine().charAt(0);
+		char player = sc.next().charAt(0);
 		if (player == 'X') {
 			computer = 'O';
 		} else
