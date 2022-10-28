@@ -31,6 +31,7 @@ public class EmployeeService {
 			Employee emp = EmployeeService.setEmployeeDetails();
 			DbConnection Dbconn = new DbConnection();
 			Dbconn.insertEmployee(emp);
+			FileIOEmployee.fileWriteOperation(emp);
 			employeePayRollList.add(emp);
 			Scanner sc = new Scanner(System.in);
 			System.out.println("Add more employee , enter Y/N");
@@ -38,8 +39,6 @@ public class EmployeeService {
 			if (choice == 'y')
 				i = 0;
 		}
-
-		FileIOEmployee.readWriteOperation(employeePayRollList);
 
 	}
 
@@ -49,10 +48,12 @@ public class EmployeeService {
 
 	}
 
-	public static void main(String[] args) throws IOException, ClassNotFoundException, ParseException {
+	public static void main(String[] args)
+			throws IOException, ClassNotFoundException, ParseException, java.text.ParseException {
 		EmployeeService createEmp = new EmployeeService();
 		createEmp.CreatePayRollData();
 
+		FileIOEmployee.readJSONdata();
 	}
 
 }
