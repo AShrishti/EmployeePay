@@ -30,6 +30,7 @@ public class EmployeeService {
 		for (int i = 1; i < 2; i++) {
 			Employee emp = EmployeeService.setEmployeeDetails();
 			DbConnection Dbconn = new DbConnection();
+			// inserting employee details into DB
 			Dbconn.insertEmployee(emp);
 			FileIOEmployee.fileWriteOperation(emp);
 			employeePayRollList.add(emp);
@@ -42,6 +43,7 @@ public class EmployeeService {
 
 	}
 
+	// Get All Employee details from DataBase
 	public void getEmployeeDetails() {
 		DbConnection.getEmployee();
 	}

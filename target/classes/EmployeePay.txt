@@ -6,3 +6,4 @@
 {"id":23,"name":"SHYAMA","gender":"M","salary":55000.0}
 {"id":24,"name":"NEHA","gender":"F","salary":99000.0}
 {"id":25,"name":"Mayur","gender":"M","salary":88000.0}
+{"id":26,"name":"bhaiya","gender":"M","salary":87000.0}
