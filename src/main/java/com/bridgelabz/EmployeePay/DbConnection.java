@@ -1,11 +1,6 @@
 package com.bridgelabz.EmployeePay;
 
 import java.sql.*;
-import java.sql.Connection;
-import java.sql.DriverManager;
-import java.sql.ResultSet;
-import java.sql.SQLException;
-import java.sql.Statement;
 
 public class DbConnection {
 
@@ -101,6 +96,39 @@ public class DbConnection {
 			}
 		}
 
+	}
+
+	public static void getEmployee() {
+		try {
+			Class.forName("com.mysql.jdbc.Driver");
+			Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/payroll_service", "root", "ROOT");
+			Statement stmt = con.createStatement();
+
+			String query = "SELECT employee_payroll.emp_id,employee_payroll.name ,payroll_details.net_pay  FROM employee_payroll\r\n"
+					+ "	INNER JOIN payroll_details ON employee_payroll.emp_id=payroll_details.emp_id; ";
+
+			ResultSet rs = stmt.executeQuery(query);
+			while (rs.next()) {
+				int id = rs.getInt("emp_id");
+				String Name = rs.getString("name");
+				String Net_Pay = rs.getString("net_pay");
+
+				System.out.format("%s ,%s ,%s", id, Name, Net_Pay);
+				System.out.println();
+			}
+			PreparedStatement preparedStmt = con.prepareStatement(query);
+
+			preparedStmt.execute();
+
+			con.close();
+
+		} catch (ClassNotFoundException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 	}
 
 }

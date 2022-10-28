@@ -43,17 +43,17 @@ public class EmployeeService {
 	}
 
 	public void getEmployeeDetails() {
-		// employeePayRollList.forEach(employee ->
-		// employee.getName()+employee.getSalary())
-
+		DbConnection.getEmployee();
 	}
 
 	public static void main(String[] args)
 			throws IOException, ClassNotFoundException, ParseException, java.text.ParseException {
-		EmployeeService createEmp = new EmployeeService();
-		createEmp.CreatePayRollData();
+		EmployeeService emp = new EmployeeService();
+		emp.CreatePayRollData();
 
 		FileIOEmployee.readJSONdata();
+
+		emp.getEmployeeDetails();
 	}
 
 }
